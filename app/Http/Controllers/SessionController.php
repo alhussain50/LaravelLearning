@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -20,7 +19,7 @@ class SessionController extends Controller
 
         if(! Auth::attempt($attributes)){
             throw ValidationException::withMessages([
-                'emails' => 'Sorry those credentials do not match'
+                'email' => 'Sorry those credentials do not match'
             ]);
         }
 
